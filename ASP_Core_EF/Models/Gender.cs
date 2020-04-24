@@ -10,7 +10,9 @@ namespace ASP_Core_EF.Models
     public class Gender
     {
         [Key]
+
         public int GenderId { get; set; }
+
         //Display Name and Added Validation
         [DisplayName("Gender Name")]
         [Required(ErrorMessage ="Gender Name is Required")]

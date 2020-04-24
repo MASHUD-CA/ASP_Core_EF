@@ -12,9 +12,8 @@ namespace ASP_Core_EF.Models
         [Key]
         public int CourseId { get; set; }
 
-        // Added title
+        // Added title and Validation
         [DisplayName("Course Name")]
-        //Added validation
         [Required(ErrorMessage ="Course Name is Required.")]
         public string CourseName { get; set; }
 
