@@ -1,5 +1,6 @@
 ﻿using ASP_Core_EF.Models;
 using ASP_Core_EF.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace ASP_Core_EF.Reposotory
             db = _db;
         }
         //Getting all the students from the Database in following line
-        public IEnumerable<Student> GetStudents => db.Students;
-
+        public IEnumerable<Student> GetStudents => db.Students.Include(global => global.Genders);
+        
         public void Add(Student _Student)
         {
             db.Students.Add(_Student);
