@@ -11,10 +11,14 @@ namespace ASP_Core_EF.Controllers
     public class StudentController : Controller
     {
         private readonly IStudent _Student;
+        //Making relation with Gender table from StudentController.cs
+        private readonly IGender _Gender;
 
-        public StudentController(IStudent _IStudent)
+        public StudentController(IStudent _IStudent, IGender _IGender)
         {
             _Student = _IStudent;
+            //Making relation with Gender table from StudentController.cs
+            _Gender = _IGender;
         }
         public IActionResult Index()
         {
@@ -23,6 +27,8 @@ namespace ASP_Core_EF.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            //Making relation with Gender table from StudentController.cs
+            ViewBag.Genders = _Gender.GetGenders;
             return View();
         }
         [HttpPost]
