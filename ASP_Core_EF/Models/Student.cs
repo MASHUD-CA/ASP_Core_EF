@@ -35,5 +35,8 @@ namespace ASP_Core_EF.Models
         // Status = an enumerated type (? in front of Status = can be null )
         public Status? Status { get; set; }
         
+        //added properties
+        public Gender Genders { get; set; }
+        
     }
 }
