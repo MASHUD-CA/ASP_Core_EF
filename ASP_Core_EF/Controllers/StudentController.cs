@@ -47,6 +47,8 @@ namespace ASP_Core_EF.Controllers
             Student model = _Student.GetStudent(Id);
             return View(model);
         }
+
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? Id)
         {
             _Student.Remove(Id);
