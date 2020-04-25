@@ -34,6 +34,11 @@ namespace ASP_Core_EF.Controllers
         [HttpPost]
         public IActionResult Create(Student model)
         {
+            if (ModelState.IsValid)
+            {
+                _Student.Add(model);
+                return RedirectToAction("Index");
+            }
             return View(model);
         }
     }
