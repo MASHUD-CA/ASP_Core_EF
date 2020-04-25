@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,18 +21,30 @@ namespace ASP_Core_EF.Models
         [Key]
         public int StudentId { get; set; }
 
+        //Display name and Validation
+        [DisplayName("First Name")]
+        [Required(ErrorMessage = "First Name is Required")]
         public string FirstName { get; set; }
 
+        [DisplayName("Last Name")]
+        [Required(ErrorMessage = "Last Name is Required")]
         public string LastName { get; set; }
 
+        [DisplayName("Date of Birth")]
+        [Required(ErrorMessage = "DOB is Required")]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
+        [DisplayName("Gender Status")]
+      //  [Required(ErrorMessage = "Gender is Required")]
         public int GenderId { get; set; }
 
+        [DisplayName("Registration Date")]
+        [Required(ErrorMessage = "Registration Date is Required")]
         [DataType(DataType.Date)]
         public DateTime RegistrationDate { get; set; }
 
+        [DisplayFormat(NullDisplayText ="No Status")]
         // Status = an enumerated type (? in front of Status = can be null )
         public Status? Status { get; set; }
         
