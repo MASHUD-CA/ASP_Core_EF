@@ -41,5 +41,16 @@ namespace ASP_Core_EF.Controllers
             }
             return View(model);
         }
+        [HttpGet]
+        public IActionResult Delete(int? Id)
+        {
+            Student model = _Student.GetStudent(Id);
+            return View(model);
+        }
+        public IActionResult DeleteConfirm(int? Id)
+        {
+            _Student.Remove(Id);
+            return RedirectToAction("Index");
+        }
     }
 }
