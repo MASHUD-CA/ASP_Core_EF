@@ -54,5 +54,10 @@ namespace ASP_Core_EF.Controllers
             _Course.Remove(Id);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult Details(int? Id)
+        {
+            return View(_Course.GetCourse(Id));
+        }
     }
 }
