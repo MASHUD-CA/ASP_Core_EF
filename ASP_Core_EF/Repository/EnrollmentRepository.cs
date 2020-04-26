@@ -1,5 +1,6 @@
 ﻿using ASP_Core_EF.Models;
 using ASP_Core_EF.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace ASP_Core_EF.Reposotory
             db = _db;
         }
         //Getting all the courses info from the Database in following line
-        public IEnumerable<Enrollment> GetEnrollments => db.Enrollments;
+        // Included Students and Courses to get their information
+        public IEnumerable<Enrollment> GetEnrollments => db.Enrollments.Include(s =>s.Students).Include(c =>c.Courses);
 
         public void Add(Enrollment _Enrollment)
         {
