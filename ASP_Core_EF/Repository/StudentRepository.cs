@@ -26,7 +26,8 @@ namespace ASP_Core_EF.Reposotory
 
         public Student GetStudent(int? Id)
         {
-            Student dbEntity = db.Students.Find(Id);
+            // Student dbEntity = db.Students.Find(Id); // Info for only one student
+            Student dbEntity = db.Students.Include(e => e.Enrollments).SingleOrDefault(m => m.StudentId == Id);
             return dbEntity;
         }
 
