@@ -50,6 +50,9 @@ namespace ASP_Core_EF.Models
         
         //added properties
         public Gender Genders { get; set; }
+
+        //Added properties for Detail link
+        public ICollection<Enrollment> Enrollments { get; set; }
         
     }
 }
