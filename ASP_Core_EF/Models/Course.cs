@@ -21,5 +21,8 @@ namespace ASP_Core_EF.Models
         [Required(ErrorMessage ="Credits is Required.")]
         public string Credits { get; set; }
 
+        //Added properties for Detail link of courses
+        public ICollection<Enrollment> Enrollments { get; set; }
+
     }
 }

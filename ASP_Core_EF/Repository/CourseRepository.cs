@@ -1,5 +1,6 @@
 ﻿using ASP_Core_EF.Models;
 using ASP_Core_EF.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,8 @@ namespace ASP_Core_EF.Reposotory
 
         public Course GetCourse(int? Id)
         {
-            Course dbEntity = db.Courses.Find(Id);
-            return dbEntity;
+            //  Course dbEntity = db.Courses.Find(Id); 
+            return db.Courses.Include(e => e.Enrollments).SingleOrDefault(a => a.CourseId == Id);
         }
 
         public void Remove(int? Id)
