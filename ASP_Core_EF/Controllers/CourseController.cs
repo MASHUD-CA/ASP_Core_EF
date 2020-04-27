@@ -23,7 +23,9 @@ namespace ASP_Core_EF.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Course model = new Course();
+            model.CourseId = 0;
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(Course model)

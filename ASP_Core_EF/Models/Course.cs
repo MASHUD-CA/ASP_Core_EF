@@ -15,10 +15,12 @@ namespace ASP_Core_EF.Models
         // Added title and Validation
         [DisplayName("Course Name")]
         [Required(ErrorMessage ="Course Name is Required.")]
+        [StringLength(10)]
         public string CourseName { get; set; }
 
         //Added validaton
         [Required(ErrorMessage ="Credits is Required.")]
+        [StringLength(10)]
         public string Credits { get; set; }
 
         //Added properties for Detail link of courses
