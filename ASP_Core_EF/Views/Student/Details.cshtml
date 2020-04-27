@@ -81,35 +81,26 @@
                 <tbody>
                     @foreach (var item in Model.Enrollments)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Students.FirstName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Courses.CourseName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.StartDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.EndDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Grade)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Students.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Courses.CourseName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Grade)
+                        </td>
+                     </tr>
                     }
                 </tbody>
             </table>
-
-
-
-
         </dd>
     </dl>
 </div>

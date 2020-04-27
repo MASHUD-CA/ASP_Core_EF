@@ -59,5 +59,11 @@ namespace ASP_Core_EF.Controllers
         {
             return View(_Course.GetCourse(Id));
         }
+        //For editing
+        public IActionResult Edit(int? Id)
+        {
+            var model = _Course.GetCourse(Id);
+            return View("Create", model);      
+        }
     }
 }
