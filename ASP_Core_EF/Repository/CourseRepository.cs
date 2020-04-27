@@ -28,7 +28,9 @@ namespace ASP_Core_EF.Reposotory
         public Course GetCourse(int? Id)
         {
             //  Course dbEntity = db.Courses.Find(Id); 
-            return db.Courses.Include(e => e.Enrollments).SingleOrDefault(a => a.CourseId == Id);
+            return db.Courses.Include(e => e.Enrollments)
+                    .ThenInclude(s => s.Students)
+                    .SingleOrDefault(a => a.CourseId == Id);
         }
 
         public void Remove(int? Id)
