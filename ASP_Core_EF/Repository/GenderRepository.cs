@@ -19,10 +19,20 @@ namespace ASP_Core_EF.Reposotory
         //Getting all the Genders info from the Database in following line
         public IEnumerable<Gender> GetGenders => db.Genders;
 
+        // Edited for Gender
         public void Add(Gender _Gender)
         {
-            db.Genders.Add(_Gender);
-            db.SaveChanges();
+            if(_Gender.GenderId == 0)
+            {
+                db.Genders.Add(_Gender);
+                db.SaveChanges();
+            }
+            else
+            {
+                var dbEntity = db.Genders.Find(_Gender.GenderId);
+                dbEntity.GenderName = _Gender.GenderName;
+                db.SaveChanges();
+            }
         }
 
         public Gender GetGender(int? Id)
