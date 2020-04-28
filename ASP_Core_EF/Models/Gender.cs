@@ -18,5 +18,8 @@ namespace ASP_Core_EF.Models
         [Required(ErrorMessage ="Gender Name is Required")]
         public string GenderName { get; set; }
 
+        //For Info of Students
+       public ICollection<Student> Students { get; set; }
+
     }
 }

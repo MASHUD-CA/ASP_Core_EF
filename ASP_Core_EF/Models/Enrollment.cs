@@ -43,7 +43,8 @@ namespace ASP_Core_EF.Models
         public Grade? Grade { get; set; }
 
         //Added to get info from Student and Course Class
-        public Student Students { get; set; }
         public Course Courses { get; set; }
+        public Student Students { get; set; }     
+        
     }
 }

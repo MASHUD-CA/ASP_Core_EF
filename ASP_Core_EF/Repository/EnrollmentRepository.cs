@@ -27,8 +27,9 @@ namespace ASP_Core_EF.Reposotory
 
         public Enrollment GetEnrollment(int? Id)
         {
-            Enrollment dbEntity = db.Enrollments.Find(Id);
-            return dbEntity;
+            //  Only one info
+              Enrollment dbEntity = db.Enrollments.Find(Id);
+                   return dbEntity;
         }
 
         public void Remove(int? Id)

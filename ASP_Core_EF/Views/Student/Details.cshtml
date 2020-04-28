@@ -97,7 +97,15 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Grade)
                         </td>
-                     </tr>
+                        <!-- Details are not Required as itself is details of Student's Enrollment-->
+    <!--
+     <td>
+         <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> |
+         <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a> |
+         <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
+     </td>
+     -->
+                    </tr>
                     }
                 </tbody>
             </table>

@@ -1,5 +1,6 @@
 ﻿using ASP_Core_EF.Models;
 using ASP_Core_EF.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,10 @@ namespace ASP_Core_EF.Reposotory
 
         public Gender GetGender(int? Id)
         {
-            Gender dbEntity = db.Genders.Find(Id);
+            //GetGender only one student
+              Gender dbEntity = db.Genders.Find(Id);
+
+            
             return dbEntity;
         }
 
@@ -36,5 +40,6 @@ namespace ASP_Core_EF.Reposotory
             db.Genders.Remove(dbEntity);
             db.SaveChanges();
         }
+
     }
 }
