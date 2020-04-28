@@ -20,10 +20,13 @@ namespace ASP_Core_EF.Controllers
         {
             return View(_Gender.GetGenders);
         }
+
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Gender model = new Gender();
+            model.GenderId = 0;
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(Gender model)

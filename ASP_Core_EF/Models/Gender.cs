@@ -16,6 +16,7 @@ namespace ASP_Core_EF.Models
         //Display Name and Added Validation
         [DisplayName("Gender Name")]
         [Required(ErrorMessage ="Gender Name is Required")]
+        [StringLength(10)]
         public string GenderName { get; set; }
 
         //For Info of Students
