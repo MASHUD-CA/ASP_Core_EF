@@ -29,8 +29,9 @@ namespace ASP_Core_EF.Reposotory
         {
             //GetGender only one student
             //  Gender dbEntity = db.Genders.Find(Id);
-            Gender dbEntity = db.Genders.Include(s => s.Students).SingleOrDefault(m => m.GenderId == Id);
-            return dbEntity;
+           //   Gender dbEntity = db.Genders.Include(s => s.Students).SingleOrDefault(m => m.GenderId == Id);
+            //  return dbEntity;
+            return db.Genders.Include(s => s.Students).SingleOrDefault(a => a.GenderId == Id);
         }
 
         public void Remove(int? Id)

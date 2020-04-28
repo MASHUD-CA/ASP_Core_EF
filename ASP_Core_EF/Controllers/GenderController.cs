@@ -53,6 +53,7 @@ namespace ASP_Core_EF.Controllers
             _Gender.Remove(Id);
             return RedirectToAction("Index");
         }
+        
         //To Get details of Gender
         [HttpGet]
         public IActionResult Details(int? Id)

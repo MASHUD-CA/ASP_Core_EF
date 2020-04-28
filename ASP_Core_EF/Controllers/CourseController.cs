@@ -50,17 +50,20 @@ namespace ASP_Core_EF.Controllers
                 return View(model);
             }
         }
+
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? Id)
         {
             _Course.Remove(Id);
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public IActionResult Details(int? Id)
         {
             return View(_Course.GetCourse(Id));
         }
+
         //For editing
         public IActionResult Edit(int? Id)
         {
