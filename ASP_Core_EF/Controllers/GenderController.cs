@@ -60,5 +60,12 @@ namespace ASP_Core_EF.Controllers
         {
             return View(_Gender.GetGender(Id));
         }
+
+        //For Editing
+        public IActionResult Edit(int? Id)
+        {
+            var model = _Gender.GetGender(Id);
+            return View("Create", model);
+        }
     }
 }
